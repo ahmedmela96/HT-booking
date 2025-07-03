@@ -1,0 +1,137 @@
+/* الأساسيات */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ✅ صفحة index.html — خلفية عادية */
+body.index-page {
+  background: url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.index-content {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.index-content img.logo {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.index-content h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.index-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-animated {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-animated:hover {
+  transform: scale(1.05);
+  background-color: darkred;
+}
+
+/* ✅ صفحة login.html — خلفية مضببة */
+body.login-page {
+  background: url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px 20px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.login-container img.logo {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  text-align: right;
+  font-size: 15px;
+}
+
+.error {
+  color: #ffd2d2;
+  margin-top: 10px;
+}
+
+/* ✅ أنيميشن */
+.animate-fade {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ✅ تحسين الهاتف */
+@media (max-width: 600px) {
+  .index-content h1 { font-size: 22px; }
+  .index-content p { font-size: 14px; }
+  .index-content img.logo { width: 80px; }
+  .login-container { padding: 20px; }
+}
